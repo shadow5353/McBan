@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class McBan extends JavaPlugin {
 
-    @Override public void onEnable() {
+    public void onEnable() {
         saveDefaultConfig();
     }
 
