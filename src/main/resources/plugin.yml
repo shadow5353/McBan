@@ -1,0 +1,10 @@
+name: McBan
+version: 1.0
+main: com.shadow5353.McBan
+description: Make notes on players for other staff members
+
+commands:
+    tempban:
+        usage: /<command>
+        description: Main Command
+        aliases: [ban, mcban]
