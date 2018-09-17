@@ -55,7 +55,7 @@ public class CommandManager implements CommandExecutor {
                     if (args[0] != null) {
                         OfflinePlayer targetPlayer = Bukkit.getOfflinePlayer(args[0]);
 
-                        if (args[1] != null) {
+                        if (args.length == 2) {
                             ban.ShowMenu(p, targetPlayer, args[1]);
                         } else {
                             ban.ShowMenu(p, targetPlayer, "-p");
