@@ -1,23 +1,24 @@
 # Bans in McBan
 bans:
     1:
-        # The name of the ban
-        name: Diamond Ore
         # The reason of the ban, that will be broadcasted and showed for the player.
         reason: Xray
         # D = day(s), H = hour(s), BAN = perm banned
         time: 2D
+        # The dec Id of the item
+        item: 56
+
     2:
-        # The name of the ban
-        name: Feather
         # The reason of the ban, that will be broadcasted and showed for the player.
         reason: Fly hacking
         # D = day(s), H = hour(s), BAN = perm banned
         time: 14D
+        # The dec Id of the item
+        item: 288
     3:
-        # The name of the ban
-        name: Bedrock
         # The reason of the ban, that will be broadcasted and showed for the player.
         reason: perm banned
         # D = day(s), H = hour(s), BAN = perm banned
         time: BAN
+        # The dec Id of the item
+        item: 07
