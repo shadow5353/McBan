@@ -44,8 +44,10 @@ public class CommandManager implements CommandExecutor {
                     message.command(p, "/tempban <Player> [-s, -p]" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Tempban/ban a player");
                     p.sendMessage(ChatColor.GOLD + "---------------------------------------------");
                     return true;
-                } else if (args.length >= 1 || args[0].equalsIgnoreCase("help") || args[0].equalsIgnoreCase("info")) {
-                    message.good(p, "Player: " + args[1]);
+                } else if (args[0].equalsIgnoreCase("help") || args[0].equalsIgnoreCase("info")) {
+                    if (args[2] != null) {
+                        message.good(p, "Player: " + args[2]);
+                    }
                 }
 
                 BanCommands c = getCommand(args[0]);
