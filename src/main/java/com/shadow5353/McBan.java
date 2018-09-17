@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class McBan extends JavaPlugin {
 
     public void onEnable() {
-        getCommand("mcban").setExecutor(new CommandManager());
+        getCommand("tempban").setExecutor(new CommandManager());
 
         saveDefaultConfig();
     }

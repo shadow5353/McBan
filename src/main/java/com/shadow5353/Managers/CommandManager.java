@@ -31,7 +31,7 @@ public class CommandManager implements CommandExecutor {
 
         Player p = (Player) sender;
 
-        if (cmd.getName().equalsIgnoreCase("mcban")) {
+        if (cmd.getName().equalsIgnoreCase("tempban")) {
             if (!p.hasPermission("mcban.use")) {
                 message.noPermission(p);
             } else {
