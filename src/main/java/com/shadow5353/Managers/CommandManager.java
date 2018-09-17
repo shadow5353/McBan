@@ -49,8 +49,8 @@ public class CommandManager implements CommandExecutor {
                 BanCommands c = getCommand(args[0]);
 
                 if (c == null) {
-                    if (args[1] != null) {
-                        message.good(p, "Player: " + args[1]);
+                    if (args[0] != null) {
+                        message.good(p, "Player: " + args[0]);
                     }
                     return true;
                 }
