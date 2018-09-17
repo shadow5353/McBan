@@ -1,6 +1,7 @@
 package com.shadow5353.Commands;
 
 import com.shadow5353.Managers.MessageManager;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class Help extends BanCommands {
@@ -11,7 +12,10 @@ public class Help extends BanCommands {
         if (!p.hasPermission("mcban.use")) {
             msg.noPermission(p);
         } else {
-            msg.good(p, "Temp ban");
+            p.sendMessage(ChatColor.GOLD + "---------------------------------------------");
+            p.sendMessage(ChatColor.YELLOW + "To ban a player: " + ChatColor.GOLD + "/tempban <Player> [-s,-p]");
+            p.sendMessage(ChatColor.YELLOW + "As default it will be broadcast on the server, but if you have -s behind the name, it will not broadcast.");
+            p.sendMessage(ChatColor.GOLD + "---------------------------------------------");
         }
     }
 

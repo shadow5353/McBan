@@ -1,6 +1,8 @@
 package com.shadow5353.Managers;
 
 import com.shadow5353.Commands.BanCommands;
+import com.shadow5353.Commands.Help;
+import com.shadow5353.Commands.Info;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,7 +19,8 @@ public class CommandManager implements CommandExecutor {
     private ArrayList<BanCommands> cmds = new ArrayList<BanCommands>();
 
     public CommandManager() {
-        // Todo add command
+        cmds.add(new Help());
+        cmds.add(new Info());
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -35,10 +38,14 @@ public class CommandManager implements CommandExecutor {
 
                 if (args.length == 0) {
                     p.sendMessage(ChatColor.GOLD + "---------------------------------------------");
-                    message.command(p, "/mcban help" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Show a list of commands");
-
+                    message.command(p, "/tempban" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Show a list of commands");
+                    message.command(p, "/tempban help" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Shows more details about commands");
+                    message.command(p, "/tempban info" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Show information about the McBan");
+                    message.command(p, "/tempban <Player> [-s, -p]" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Tempban/ban a player");
                     p.sendMessage(ChatColor.GOLD + "---------------------------------------------");
                     return true;
+                } else if (args.length > 0) {
+                    message.good(p, "Player: " + args[1]);
                 }
 
                 BanCommands c = getCommand(args[0]);
