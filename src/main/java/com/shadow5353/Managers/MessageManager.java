@@ -7,7 +7,7 @@ public class MessageManager {
 
     public MessageManager() { }
 
-    private String prefix = ChatColor.GOLD + "[" + ChatColor.DARK_RED + "Staff Notes" + ChatColor.GOLD + "] ";
+    private String prefix = ChatColor.GOLD + "[" + ChatColor.DARK_RED + "McBan" + ChatColor.GOLD + "] ";
 
     public void info(CommandSender s, String msg) {
         msg(s, ChatColor.YELLOW, msg);
@@ -23,11 +23,6 @@ public class MessageManager {
 
     public void good(CommandSender s, String msg) {
         msg(s, ChatColor.GREEN, msg);
-    }
-
-    public void alert(CommandSender s, String msg) {
-        String alertPrefix = ChatColor.GOLD + "[" + ChatColor.DARK_RED + "Staff Notes: Alert" + ChatColor.GOLD + "] ";
-        msg(s, ChatColor.DARK_RED, msg, alertPrefix);
     }
 
     public void noPermission(CommandSender s) {

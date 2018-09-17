@@ -31,16 +31,15 @@ public class CommandManager implements CommandExecutor {
 
         Player p = (Player) sender;
 
-        if (cmd.getName().equalsIgnoreCase("staffnotes")) {
-            if (!p.hasPermission("staffnotes.use")) {
+        if (cmd.getName().equalsIgnoreCase("mcban")) {
+            if (!p.hasPermission("mcban.use")) {
                 message.noPermission(p);
             } else {
 
                 if (args.length == 0) {
                     p.sendMessage(ChatColor.GOLD + "---------------------------------------------");
-                    message.command(p, "/sn" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Show a list of commands");
-                    for (BanCommands mc : cmds)
-                        message.command(p, "/sn " + aliases(mc) + " " + mc.getUsage() + ChatColor.BLACK + " : " + ChatColor.YELLOW + mc.getMessage());
+                    message.command(p, "/mcban help" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Show a list of commands");
+
                     p.sendMessage(ChatColor.GOLD + "---------------------------------------------");
                     return true;
                 }
