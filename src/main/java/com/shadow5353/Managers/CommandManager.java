@@ -3,7 +3,9 @@ package com.shadow5353.Managers;
 import com.shadow5353.Commands.BanCommands;
 import com.shadow5353.Commands.Help;
 import com.shadow5353.Commands.Info;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,6 +17,7 @@ import java.util.Vector;
 
 public class CommandManager implements CommandExecutor {
     private MessageManager message = new MessageManager();
+    private BanManager ban = new BanManager();
 
     private ArrayList<BanCommands> cmds = new ArrayList<BanCommands>();
 
@@ -50,7 +53,13 @@ public class CommandManager implements CommandExecutor {
 
                 if (c == null) {
                     if (args[0] != null) {
-                        message.good(p, "Player: " + args[0]);
+                        OfflinePlayer targetPlayer = Bukkit.getOfflinePlayer(args[0]);
+
+                        if (args[1] != null) {
+                            ban.ShowMenu(p, targetPlayer, args[1]);
+                        } else {
+                            ban.ShowMenu(p, targetPlayer, "-p");
+                        }
                     }
                     return true;
                 }
