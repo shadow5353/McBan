@@ -1,12 +1,10 @@
 package com.shadow5353.Managers;
 
 import com.shadow5353.Commands.BanCommands;
-import com.shadow5353.McBan;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -15,7 +13,6 @@ import java.util.Vector;
 
 public class CommandManager implements CommandExecutor {
     private MessageManager message = new MessageManager();
-    private FileConfiguration config = McBan.getPlugin().getConfig();
 
     private ArrayList<BanCommands> cmds = new ArrayList<BanCommands>();
 
@@ -25,7 +22,7 @@ public class CommandManager implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (!(sender instanceof Player)) {
-            message.error(sender, "Only players can use StaffNotes!");
+            message.error(sender, "Only players can use McBan!");
             return true;
         }
 
