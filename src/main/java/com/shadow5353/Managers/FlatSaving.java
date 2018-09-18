@@ -18,7 +18,7 @@ public class FlatSaving {
     private ArrayList<Ban> bans = new ArrayList<Note>();
 
     public void setupBans() {
-        if (SettingsManager.getbans().<ConfigurationSection>get("bans") == null) SettingsManager.getbans().createConfigurationSection("bans");
+        if (SettingsManager.getBans().<ConfigurationSection>get("bans") == null) SettingsManager.getBans().createConfigurationSection("bans");
 
         bans.clear();
 
@@ -27,33 +27,33 @@ public class FlatSaving {
         }
     }
 
-    public ArrayList<Ban> getbans() {
+    public ArrayList<Ban> getBans() {
         return bans;
     }
 
     public void saveBan(String note, UUID playerUUID, UUID adminUUID, String date){
-        int id = getbans().size() + 1;
+        int id = getBans().size() + 1;
 
-        SettingsManager.getbans().createConfigurationSection("bans." + id);
-        SettingsManager.getbans().set("bans." + id + ".note", note);
-        SettingsManager.getbans().set("bans." + id + ".date", date);
-        SettingsManager.getbans().set("bans." + id + ".playerUUID", playerUUID.toString());
-        SettingsManager.getbans().set("bans." + id + ".adminUUID", adminUUID.toString());
+        SettingsManager.getBans().createConfigurationSection("bans." + id);
+        SettingsManager.getBans().set("bans." + id + ".note", note);
+        SettingsManager.getBans().set("bans." + id + ".date", date);
+        SettingsManager.getBans().set("bans." + id + ".playerUUID", playerUUID.toString());
+        SettingsManager.getBans().set("bans." + id + ".adminUUID", adminUUID.toString());
 
         setupBans();
     }
 
-    public Note getBan(int id) {
-         return new Note(id);
+    public Ban getBan(int id) {
+         return new Ban(id);
     }
 
     public boolean removeBan(UUID playerUUID, int id) {
         boolean found = false;
 
-        if (getNote(id).getPlayerUUID().equals(playerUUID)) {
+        if (getBan(id).getPlayerUUID().equals(playerUUID)) {
             found = true;
 
-            SettingsManager.getbans().removePath("bans." + id);
+            SettingsManager.getBans().removePath("bans." + id);
 
             setupbans();
         }
@@ -63,7 +63,7 @@ public class FlatSaving {
     }
 
     public void reset() {
-        SettingsManager.getbans().removePath("bans");
+        SettingsManager.getBans().removePath("bans");
         setupbans();
     }
 
