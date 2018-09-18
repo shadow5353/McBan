@@ -1,6 +1,5 @@
 package com.shadow5353.Managers;
 
-import com.shadow5353.Ban;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.ArrayList;
@@ -31,14 +30,16 @@ public class FlatSaving {
         return bans;
     }
 
-    public void saveBan(String note, UUID playerUUID, UUID adminUUID, String date){
+    public void saveBan(String reason, UUID playerUUID, UUID adminUUID, String date, String bannedTo, boolean perm){
         int id = getBans().size() + 1;
 
         SettingsManager.getBans().createConfigurationSection("bans." + id);
-        SettingsManager.getBans().set("bans." + id + ".note", note);
+        SettingsManager.getBans().set("bans." + id + ".reason", reason);
         SettingsManager.getBans().set("bans." + id + ".date", date);
         SettingsManager.getBans().set("bans." + id + ".playerUUID", playerUUID.toString());
         SettingsManager.getBans().set("bans." + id + ".adminUUID", adminUUID.toString());
+        SettingsManager.getBans().set("bans." + id + ".bannedTo", bannedTo);
+        SettingsManager.getBans().set("bans." + id + ".perm", perm);
 
         setupBans();
     }

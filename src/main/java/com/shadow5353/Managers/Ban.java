@@ -1,6 +1,5 @@
-package com.shadow5353;
+package com.shadow5353.Managers;
 
-import com.shadow5353.Managers.SettingsManager;
 
 import java.util.UUID;
 

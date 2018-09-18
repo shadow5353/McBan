@@ -46,7 +46,8 @@ public class MySQL {
                     "`fldReason` text CHARACTER SET utf16 COLLATE utf16_danish_ci NOT NULL," +
                     "`fldAdmin` varchar(255) NOT NULL," +
 					"`fldBannedTo` timestamp NOT NULL," +
-                    "`fldTimeStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" +
+                    "`fldTimeStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP," +
+                    "`fldPerm` tinyint(1) NOT NULL DEFAULT '0'" +
                     ") ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1\n;");
 
         } catch (SQLException e) {

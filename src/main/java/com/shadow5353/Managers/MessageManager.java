@@ -18,7 +18,7 @@ public class MessageManager {
     }
 
     public void error(CommandSender s, String msg) {
-        msg(s, ChatColor.RED, msg);
+        msg(s, ChatColor.RED, "ERROR: " + msg);
     }
 
     public void good(CommandSender s, String msg) {
