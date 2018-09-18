@@ -74,7 +74,7 @@ public class BanManager {
         int counter = 1;
 
         do {
-            if (config.contains("bans." + counter)) {
+            if (config.get("bans." + counter + ".reason") != null || config.get("bans." + counter + ".reason") != "") {
                 found = true;
                 counter++;
 

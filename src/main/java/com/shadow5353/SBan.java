@@ -14,6 +14,12 @@ public class SBan extends JavaPlugin {
         getCommand("tempban").setExecutor(new CommandManager());
 
         saveDefaultConfig();
+		
+		if (getConfig().get("savingType").equals("mysql")) {
+            MySQL.getInstance().startUp();
+        } else if (getConfig().get("savingType").equals("file")) {
+            FlatSaving.getInstance().setupBans();
+        }
     }
 
     public static Plugin getPlugin() {
