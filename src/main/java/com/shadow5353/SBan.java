@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * Created by Jacob on 17-09-2018.
  */
-public class McBan extends JavaPlugin {
+public class SBan extends JavaPlugin {
 
     public void onEnable() {
         getCommand("tempban").setExecutor(new CommandManager());
@@ -17,6 +17,6 @@ public class McBan extends JavaPlugin {
     }
 
     public static Plugin getPlugin() {
-        return Bukkit.getServer().getPluginManager().getPlugin("McBan");
+        return Bukkit.getServer().getPluginManager().getPlugin("SBan");
     }
 }
