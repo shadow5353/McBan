@@ -2,7 +2,7 @@ package com.shadow5353.Managers;
 
 import java.io.File;
 
-import com.shadow5353.McBan;
+import com.shadow5353.SBan;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -11,18 +11,18 @@ public class SettingsManager {
     private File file;
     private FileConfiguration config;
 
-    private static SettingsManager bans = new SettingsManager(McBan.getPlugin().getConfig().get("filename").toString());
+    private static SettingsManager bans = new SettingsManager(SBan.getPlugin().getConfig().get("filename").toString());
 
     public static SettingsManager getBans() {
         return bans;
     }
 
     private SettingsManager(String fileName) {
-        System.out.println(McBan.getPlugin());
+        System.out.println(SBan.getPlugin());
 
-        if (!McBan.getPlugin().getDataFolder().exists()) McBan.getPlugin().getDataFolder().mkdir();
+        if (!SBan.getPlugin().getDataFolder().exists()) SBan.getPlugin().getDataFolder().mkdir();
 
-        file = new File(McBan.getPlugin().getDataFolder(), fileName + ".yml");
+        file = new File(SBan.getPlugin().getDataFolder(), fileName + ".yml");
 
         if (!file.exists()) {
             try {

@@ -28,14 +28,14 @@ public class CommandManager implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (!(sender instanceof Player)) {
-            message.error(sender, "Only players can use McBan!");
+            message.error(sender, "Only players can use SBan!");
             return true;
         }
 
         Player p = (Player) sender;
 
         if (cmd.getName().equalsIgnoreCase("tempban")) {
-            if (!p.hasPermission("mcban.use")) {
+            if (!p.hasPermission("SBan.use")) {
                 message.noPermission(p);
             } else {
 
@@ -43,7 +43,7 @@ public class CommandManager implements CommandExecutor {
                     p.sendMessage(ChatColor.GOLD + "---------------------------------------------");
                     message.command(p, "/tempban" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Show a list of commands");
                     message.command(p, "/tempban help" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Shows more details about commands");
-                    message.command(p, "/tempban info" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Show information about the McBan");
+                    message.command(p, "/tempban info" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Show information about the SBan");
                     message.command(p, "/tempban <Player> [-s, -p]" + ChatColor.BLACK + " : " + ChatColor.YELLOW + "Tempban/ban a player");
                     p.sendMessage(ChatColor.GOLD + "---------------------------------------------");
                     return true;

@@ -9,7 +9,7 @@ public class Help extends BanCommands {
 
 
     public void onCommand(Player p, String[] args) {
-        if (!p.hasPermission("mcban.use")) {
+        if (!p.hasPermission("SBan.use")) {
             msg.noPermission(p);
         } else {
             p.sendMessage(ChatColor.GOLD + "---------------------------------------------");

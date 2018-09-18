@@ -1,6 +1,6 @@
 package com.shadow5353.Managers;
 
-import com.shadow5353.McBan;
+import com.shadow5353.SBan;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -25,7 +25,7 @@ class BanInformation {
 public class BanManager {
     private MessageManager message = new MessageManager();
     private ArrayList<BanInformation> banInformations = new ArrayList<BanInformation>();
-    private FileConfiguration config = McBan.getPlugin().getConfig();
+    private FileConfiguration config = SBan.getPlugin().getConfig();
     private int amountOfRows = 1;
     private OfflinePlayer targetPlayer;
 
@@ -45,7 +45,7 @@ public class BanManager {
                 message.info(event.getPlayer(), "Temp banning " + targetPlayer);
                 event.setWillClose(true);
             }
-        }, McBan.getPlugin());
+        }, SBan.getPlugin());
 
         int position = 0;
         for (BanInformation bi : banInformations) {
