@@ -3,18 +3,22 @@ bans:
     1:
         # The reason of the ban, that will be broadcasted and showed for the player.
         reason: Xray
-        # D = day(s), H = hour(s), BAN = perm banned
-        time: 2D
+        # Day = day(s), Hour = hour(s), BAN = perm banned
+        time: 2 Hour
         # The dec Id of the item
         item: 56
+        # The permission needed to use this and view it. SBan.bans.[name]
+        perm: xray
 
     2:
         # The reason of the ban, that will be broadcasted and showed for the player.
         reason: Fly hacking
         # D = day(s), H = hour(s), BAN = perm banned
-        time: 14D
+        time: 14 Day
         # The dec Id of the item
         item: 288
+        # The permission needed to use this and view it. SBan.bans.[name]
+        perm: fly
     3:
         # The reason of the ban, that will be broadcasted and showed for the player.
         reason: perm banned
@@ -22,3 +26,5 @@ bans:
         time: BAN
         # The dec Id of the item
         item: 07
+        # The permission needed to use this and view it. SBan.bans.[name]
+        perm: ban
