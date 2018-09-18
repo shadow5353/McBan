@@ -15,7 +15,7 @@ public class FlatSaving {
         return instance;
     }
 
-    private ArrayList<Ban> bans = new ArrayList<Note>();
+    private ArrayList<Ban> bans = new ArrayList<Ban>();
 
     public void setupBans() {
         if (SettingsManager.getBans().<ConfigurationSection>get("bans") == null) SettingsManager.getBans().createConfigurationSection("bans");
@@ -23,7 +23,7 @@ public class FlatSaving {
         bans.clear();
 
         for (String key : SettingsManager.getBans().<ConfigurationSection>get("bans").getKeys(false)) {
-            bans.add(new Note(Integer.parseInt(key)));
+            bans.add(new Ban(Integer.parseInt(key)));
         }
     }
 
@@ -55,7 +55,7 @@ public class FlatSaving {
 
             SettingsManager.getBans().removePath("bans." + id);
 
-            setupbans();
+            setupBans();
         }
 
         return found;
@@ -64,7 +64,7 @@ public class FlatSaving {
 
     public void reset() {
         SettingsManager.getBans().removePath("bans");
-        setupbans();
+        setupBans();
     }
 
     public boolean hasBan(UUID playerUUID) {

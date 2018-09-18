@@ -80,7 +80,7 @@ public class BanManager {
 
                 String reason = config.getString("bans." + counter + ".reason");
                 String amount = config.getString("bans." + counter + ".time");
-				String amount = config.getString("bans." + counter + ".perm");
+				String perm = config.getString("bans." + counter + ".perm");
                 int itemId = config.getInt("bans." + counter + ".item");
 
                 if (counter == 18 || counter == 27 || counter == 36 || counter == 45 || counter == 54) {
