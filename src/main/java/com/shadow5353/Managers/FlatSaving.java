@@ -1,6 +1,6 @@
-package com.shadow5353;
+package com.shadow5353.Managers;
 
-import com.shadow5353.Managers.SettingsManager;
+import com.shadow5353.Ban;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.ArrayList;

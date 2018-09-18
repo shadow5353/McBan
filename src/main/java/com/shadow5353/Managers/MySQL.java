@@ -1,6 +1,6 @@
-package com.shadow5353;
+package com.shadow5353.Managers;
 
-import org.bukkit.Bukkit;
+import com.shadow5353.SBan;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
