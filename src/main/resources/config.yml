@@ -1,10 +1,24 @@
+# Saving type (mysql/file)
+savingType: file
+
+# Flat file setup
+filename: bans
+
+# MySQL setup
+mysql:
+   host: localhost
+   username: root
+   password: root
+   database: sbans
+   port: 3306
+
 # Bans in McBan
 bans:
     1:
         # The reason of the ban, that will be broadcasted and showed for the player.
         reason: Xray
         # Day = day(s), Hour = hour(s), BAN = perm banned
-        time: 2 Hour
+        time: 2H
         # The dec Id of the item
         item: 56
         # The permission needed to use this and view it. SBan.bans.[name]
@@ -14,7 +28,7 @@ bans:
         # The reason of the ban, that will be broadcasted and showed for the player.
         reason: Fly hacking
         # D = day(s), H = hour(s), BAN = perm banned
-        time: 14 Day
+        time: 14D
         # The dec Id of the item
         item: 288
         # The permission needed to use this and view it. SBan.bans.[name]
